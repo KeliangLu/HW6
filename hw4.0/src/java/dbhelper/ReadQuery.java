@@ -17,10 +17,10 @@ import model.Cars;
 public class ReadQuery {
     private Connection conn;
     private ResultSet results;
+    
     public ReadQuery(){
-        
-    Properties props = new Properties();
-    InputStream instr = getClass().getResourceAsStream("dbConn.propertes");
+    Properties props= new Properties();
+    InputStream instr= getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
@@ -32,39 +32,34 @@ public class ReadQuery {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     
-    String driver = props.getProperty("driver.name");
-    String url = props.getProperty("server.name");
-    String username = props.getProperty("user.name");
-    String passwd = props.getProperty("user.password");
+        String driver = props.getProperty("driver.name");
+        String url=props.getProperty("server.name");
+        String username=props.getProperty("user.name");
+        String password =props.getProperty("user.password");
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            conn = DriverManager.getConnection(url, username, passwd);
+            conn=DriverManager.getConnection(url,username,password);
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-        
+     
     }
-    
     public void doRead(){
         try {
-            String query = "select * from Cars";
+            String query = "Select * from Cars";
             PreparedStatement ps = conn.prepareStatement(query);
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     public String getHTMLTable(){
-        
         String table = "";
         table += "<table border=1>";
-        
         try {
             while(this.results.next()){
                 Cars cars = new Cars();
@@ -75,26 +70,25 @@ public class ReadQuery {
                 cars.setCARCOLOR(this.results.getString("CARCOLOR"));
                 
                 table += "<tr>";
-                table += "<td>";
-                table += cars.getCARID();  
-                table += "</td>";
+                    table += "<td>";
+                    table += cars.getCARID();  
+                    table += "</td>";
                 
-                table += "<td>";
-                table += cars.getCARNAME();  
-                table += "</td>";
+                    table += "<td>";
+                    table += cars.getCARNAME();  
+                    table += "</td>";
                 
-                table += "<td>";
-                table += cars.getCARYEAR();  
-                table += "</td>";
+                    table += "<td>";
+                    table += cars.getCARYEAR();  
+                    table += "</td>";
                         
-                table += "<td>";
-                table += cars.getCARMODEL();  
-                table += "</td>";
+                    table += "<td>";
+                    table += cars.getCARMODEL();  
+                    table += "</td>";
                 
-                table += "<td>";
-                table += cars.getCARCOLOR();  
-                table += "</td>";
-                
+                    table += "<td>";
+                    table += cars.getCARCOLOR();  
+                    table += "</td>";
                 
                 table += "</tr>";
                 
@@ -104,7 +98,6 @@ public class ReadQuery {
         }
         
         table += "</table>";
-        
                 return table;
 
     }            
