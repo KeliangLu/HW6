@@ -79,9 +79,9 @@ public class AddServlet extends HttpServlet {
             throws ServletException, IOException {
         
             //get the data
-            int id = Integer.parseInt("id");
+            int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
-            int year = Integer.parseInt("year");
+            int year = Integer.parseInt(request.getParameter("year"));
             String model = request.getParameter("model");
             String color = request.getParameter("color");
             

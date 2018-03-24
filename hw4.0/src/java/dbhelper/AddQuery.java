@@ -63,8 +63,7 @@ public class AddQuery {
     public void doAdd (Cars cars){
         
         try {
-            String query = "INSERT INTO Cars (CARID,CARNAME,CARYEAR,CARMODEL,CARCOLOR) VALUE(?,?,?,?,?)";
-            
+            String query = "INSERT INTO Cars (CARID,CARNAME,CARYEAR,CARMODEL,CARCOLOR) VALUES(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             
             ps.setInt(1, cars.getCARID());
