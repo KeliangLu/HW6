@@ -10,19 +10,19 @@
         
         <form name="addForm" action="addCar" method="get">
             
-            <label>Car ID:</label>
+            <label>Car ID: </label>
             <input type="text" name="id" value="" />
             <br>
-            <label>Car Name:</label>
+            <label>Car Name: </label>
             <input type="text" name="name" value="" />
             <br>
-            <label>Year:</label>
+            <label>Year: </label>
             <input type="text" name="year" value="" />
             <br>
-            <label>Car Model:</label>
+            <label>Car Model: </label>
             <input type="text" name="model" value="" />
             <br>
-            <label>Car Color:</label>
+            <label>Car Color: </label>
             <input type="text" name="color" value="" />
             <br>
             <input type="submit" name="submit" value="Submit" />

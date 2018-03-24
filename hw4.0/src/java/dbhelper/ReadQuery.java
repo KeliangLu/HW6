@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import model.Cars;
 
 
@@ -89,6 +91,9 @@ public class ReadQuery {
                     table += "<td>";
                     table += cars.getCARCOLOR();  
                     table += "</td>";
+                    
+                    table +="<td>";
+                    table +="<a href=delete?CARID=" + cars.getCARID()+"> Delete </a>";
                 
                 table += "</tr>";
                 

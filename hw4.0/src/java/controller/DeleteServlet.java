@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dbhelper.AddQuery;
+import dbhelper.DeleteQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,14 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Cars;
 
 /**
  *
  * @author kellu
  */
-@WebServlet(name = "AddServlet", urlPatterns = {"/addCar"})
-public class AddServlet extends HttpServlet {
+@WebServlet(name = "DeleteServlet", urlPatterns = {"/delete"})
+public class DeleteServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +39,10 @@ public class AddServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddServlet</title>");            
+            out.println("<title>Servlet DeleteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,8 +61,8 @@ public class AddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            //Pass execution on to doPost
-                doPost(request, response);
+                //Pass execution on to doPost
+                doPost(request,response);
     }
 
     /**
@@ -78,30 +77,17 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            //get the data
-            int id = Integer.parseInt("id");
-            String name = request.getParameter("name");
-            int year = Integer.parseInt("year");
-            String model = request.getParameter("model");
-            String color = request.getParameter("color");
-            
-            //set up a friend object
-            Cars cars = new Cars();
-            cars.setCARID(id);
-            cars.setCARNAME(name);
-            cars.setCARYEAR(year);
-            cars.setCARMODEL(model);
-            cars.setCARCOLOR(color);
-
-            //set up an addQuery object
-            AddQuery aq = new AddQuery();
-            //pass the friend to addQuery to add to the database
-            aq.doAdd(cars);
-            //pass execution control to the readServlet
+            //get the CARID
+            int CARID = Integer.parseInt(request.getParameter("CARID"));
+            //create a deleteQuery object
+            DeleteQuery dq = new DeleteQuery();
+            //use deleteQuery to delete the object
+            dq.doDelete(CARID);
+            //Pass execution on to the ReadServlet
             String url = "/read";
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-            dispatcher.forward(request,response);
+            dispatcher.forward(request, response);
     }
 
     /**
