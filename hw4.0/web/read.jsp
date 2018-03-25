@@ -17,23 +17,18 @@
 
                 <th>Car Name</th>
 
-                <th> Car Year</th>
+                <th>Car Year</th>
 
                 <th>Car Model</th>
 
-                <th> Car Color</th>
+                <th>Car Color</th>
                 
-                <th> Delete it?</th>
+                <th>Delete it?</th>
             </tr>
         </table>
         
-        <table id="t2">
-
-            <tr>
-                <th><%=table %></th>
-            </tr>
-        </table>
-            
+        <%= table %>
+   
         </div>
         
         <br>

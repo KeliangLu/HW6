@@ -40,7 +40,8 @@ th,td{
 
 th{
     hight:500px;
-    text-align: left;
+    text-align: center;
+    background-color:#F08080;
 }
 
 tr:hover{
@@ -49,12 +50,5 @@ tr:hover{
 
 tr:nth-child(even){
     background-color: #EDEDED;
-}
-
-table#t2{
-    background-color: #FFFF99;
-}
-table#t1{
-    background-color: #F08080;
 }
 
