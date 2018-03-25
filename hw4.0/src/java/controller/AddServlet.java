@@ -79,7 +79,6 @@ public class AddServlet extends HttpServlet {
             throws ServletException, IOException {
         
             //get the data
-            int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
             int year = Integer.parseInt(request.getParameter("year"));
             String model = request.getParameter("model");
@@ -87,7 +86,7 @@ public class AddServlet extends HttpServlet {
             
             //set up a friend object
             Cars cars = new Cars();
-            cars.setCARID(id);
+
             cars.setCARNAME(name);
             cars.setCARYEAR(year);
             cars.setCARMODEL(model);

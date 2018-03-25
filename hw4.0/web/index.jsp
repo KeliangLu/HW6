@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="./CSS/Stylesheet.css">
         <title>Cars information</title>
     </head>
     <body>
