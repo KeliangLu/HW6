@@ -52,3 +52,9 @@ tr:nth-child(even){
     background-color: #EDEDED;
 }
 
+.update td{
+    border:30px;
+    height:25px;
+    padding: 10px;
+    font-weight: bold;
+}
