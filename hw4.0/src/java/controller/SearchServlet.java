@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dbhelper.UpdateQuery;
+import dbhelper.SearchQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,14 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Cars;
 
 /**
  *
  * @author kellu
  */
-@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateCar"})
-public class UpdateServlet extends HttpServlet {
+@WebServlet(name = "SearchServlet", urlPatterns = {"/search"})
+public class SearchServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +39,10 @@ public class UpdateServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UpdateServlet</title>");            
+            out.println("<title>Servlet SearchServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UpdateServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,7 +60,7 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            //pass execution on to doPost
+            
             doPost(request, response);
     }
 
@@ -76,31 +75,21 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+            // get text to search
+            String CARNAME = request.getParameter("searchVal");
+            // create a searchquery helper pbject
+            SearchQuery sq = new SearchQuery();
+            //get HTML table from the searchquery object
+            sq.doSearch(CARNAME);
+            String table = sq.getHTMLTable();
+            //pass exection control to read.jsp along with the table
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
             
-        int id = Integer.parseInt(request.getParameter("id"));
-        String name = request.getParameter("name");
-        int year = Integer.parseInt(request.getParameter("year"));
-        String model = request.getParameter("model");
-        String color = request.getParameter("color");
-        
-        Cars cars = new Cars();
-        cars.setCARID(id);
-        cars.setCARNAME(name);
-        cars.setCARYEAR(year);
-        cars.setCARMODEL(model);
-        cars.setCARCOLOR(color);
-        
-        //create an UPdateQuery object and use it to update the friend
-        UpdateQuery uq = new UpdateQuery();
-        uq.doUpdate(cars);
-        
-        //pass control to the readServlet
-        String url = "/read";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request,response);
-        
-        
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
+            
     }
 
     /**

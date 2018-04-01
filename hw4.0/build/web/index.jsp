@@ -10,5 +10,7 @@
         <h1>Cars Database</h1>
         
         <a href="read">View All Cars</a>
+        <br>
+        <a href="search.jsp">Search cars</a>
     </body>
 </html>

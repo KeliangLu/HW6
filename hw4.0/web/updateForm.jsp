@@ -1,6 +1,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="model.Cars"%>
+<%@page import= 'model.Cars' %>
 <% Cars cars = (Cars) request.getAttribute("cars") ;%>
 
 <!DOCTYPE html>
@@ -18,27 +18,27 @@
                 <tbody>
                     <tr>
                         <td>Car ID: </td>
-                        <td><input type="text" name="id" value="<%= cars.getCARID()%>" /></td>
+                        <td><input type="text" name="id" value="<%=cars.getCARID()%>" /></td>
                     </tr>
                     
                     <tr>
                         <td>Car Name: </td>
-                        <td><input type="text" name="name" value="<%= cars.getCARNAME()%>" /></td>                        
+                        <td><input type="text" name="name" value="<%=cars.getCARNAME()%>" /></td>                        
                     </tr>
                     
                     <tr>
                         <td>Year: </td>
-                        <td><input type="text" name="year" value="<%= cars.getCARYEAR()%>" /></td>                        
+                        <td><input type="text" name="year" value="<%=cars.getCARYEAR()%>" /></td>                        
                     </tr>
                     
                     <tr>
                         <td>Car Model: </td>
-                        <td><input type="text" name="model" value="<%= cars.getCARMODEL()%>" /></td>                        
+                        <td><input type="text" name="model" value="<%=cars.getCARMODEL()%>" /></td>                        
                     </tr>
                     
                     <tr>
                         <td>Car Color: </td>
-                        <td><input type="text" name="color" value="<%= cars.getCARCOLOR()%>" /></td>                        
+                        <td><input type="text" name="color" value="<%=cars.getCARCOLOR()%>" /></td>                        
                     </tr>
 
                 </tbody>

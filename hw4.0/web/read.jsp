@@ -11,28 +11,17 @@
         <div class="readtable" style="text-aligh:center">
         <h1>Car Information</h1>
 
-        <table id="t1">
-            <tr>
-                <th>Car ID</th>
-
-                <th>Car Name</th>
-
-                <th>Car Year</th>
-
-                <th>Car Model</th>
-
-                <th>Car Color</th>
-                
-                <th>Delete it?</th>
-            </tr>
-        </table>
         
         <%= table %>
-   
+        
+
         </div>
         
         <br>
         <a href ="add">Add a new Car</a>
+        <br><br>
+        <a href ="search.jsp">Search Cars</a>
+        <br>
         
     </body>
 </html>
