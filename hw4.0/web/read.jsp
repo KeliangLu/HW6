@@ -6,22 +6,33 @@
         <link rel="stylesheet" type="text/css" href="./CSS/Stylesheet.css">
         <title>JSP Page</title>
     </head>
-    <% String table=(String) request.getAttribute("table");%>
+    <% String table = (String) request.getAttribute("table");%>
     <body>
-        <div class="readtable" style="text-aligh:center">
-        <h1>Car Information</h1>
+        <div class="wrap">
 
-        
-        <%= table %>
-        
+            <%@ include file="includes/header.jsp" %>
 
-        </div>
-        
-        <br>
-        <a href ="add">Add a new Car</a>
-        <br><br>
-        <a href ="search.jsp">Search Cars</a>
-        <br>
-        
+            <%@ include file="includes/menu.jsp" %>
+
+            <div class="main">        
+                <div class="readtable" style="text-aligh:center">
+                    <h1>Car Information</h1>
+
+
+                    <%= table%>
+
+
+                </div>
+
+                <br>
+                <a href ="add">Add a new Car</a>
+                <br><br>
+                <a href ="search.jsp">Search Cars</a>
+                <br>
+            </div>
+
+            <%@ include file="includes/footer.jsp" %>   
+
+        </div>        
     </body>
 </html>

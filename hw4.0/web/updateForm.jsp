@@ -1,7 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import= 'model.Cars' %>
-<% Cars cars = (Cars) request.getAttribute("cars") ;%>
+<% Cars cars = (Cars) request.getAttribute("cars");%>
 
 <!DOCTYPE html>
 <html>
@@ -20,22 +20,22 @@
                         <td>Car ID: </td>
                         <td><input type="text" name="id" value="<%=cars.getCARID()%>" readonly/></td>
                     </tr>
-                    
+
                     <tr>
                         <td>Car Name: </td>
                         <td><input type="text" name="name" value="<%=cars.getCARNAME()%>" /></td>                        
                     </tr>
-                    
+
                     <tr>
                         <td>Year: </td>
                         <td><input type="text" name="year" value="<%=cars.getCARYEAR()%>" /></td>                        
                     </tr>
-                    
+
                     <tr>
                         <td>Car Model: </td>
                         <td><input type="text" name="model" value="<%=cars.getCARMODEL()%>" /></td>                        
                     </tr>
-                    
+
                     <tr>
                         <td>Car Color: </td>
                         <td><input type="text" name="color" value="<%=cars.getCARCOLOR()%>" /></td>                        
@@ -47,6 +47,6 @@
             <input type="submit" name="submit" value="Update" />
 
         </form>
-    <a href="read">Back to List</a>
+        <a href="read">Back to List</a>
     </body>
 </html>

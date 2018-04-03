@@ -7,11 +7,23 @@
         <title>Cars information</title>
     </head>
     <body>
-        <div class="wrap"></div>
-        <h1>Cars Database</h1>
-        
-        <a href="read">View All Cars</a>
-        <br>
-        <a href="search.jsp">Search cars</a>
+        <div class="wrap">
+
+            <%@ include file="includes/header.jsp" %>
+
+            <%@ include file="includes/menu.jsp" %>
+
+            <div class="main">
+                <h1>Cars Database</h1>
+
+                <a href="read">View All Cars</a>
+                <br>
+                <a href="search.jsp">Search cars</a>
+
+            </div>
+
+            <%@ include file="includes/footer.jsp" %>   
+
+        </div>
     </body>
 </html>
