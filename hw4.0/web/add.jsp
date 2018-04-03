@@ -8,45 +8,56 @@
     </head>
 
     <body>
-        <div class="addinfo" style="text-aligh:center">
+        <div class="wrap">
 
-            <h2>Add a New Car</h2>
+            <%@ include file="includes/header.jsp" %>
 
-            <form name="addForm" action="addCar" method="get">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Car ID: </td>
-                            <td><input type="text" name="id" value="" /></td>
-                        </tr>
+            <%@ include file="includes/menu.jsp" %>
 
-                        <tr>
-                            <td>Car Name: </td>
-                            <td><input type="text" name="name" value="" /></td>                        
-                        </tr>
+            <div class="main">
+                <div class="addinfo" style="text-aligh:center">
 
-                        <tr>
-                            <td>Year: </td>
-                            <td><input type="text" name="year" value="" /></td>                        
-                        </tr>
+                    <h2>Add a New Car</h2>
 
-                        <tr>
-                            <td>Car Model: </td>
-                            <td><input type="text" name="model" value="" /></td>                        
-                        </tr>
+                    <form name="addForm" action="addCar" method="get">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Car ID: </td>
+                                    <td><input type="text" name="id" value="" /></td>
+                                </tr>
 
-                        <tr>
-                            <td>Car Color: </td>
-                            <td><input type="text" name="color" value="" /></td>                        
-                        </tr>
+                                <tr>
+                                    <td>Car Name: </td>
+                                    <td><input type="text" name="name" value="" /></td>                        
+                                </tr>
 
-                    </tbody>
-                </table>
-                <input type="submit" name="submit" value="Submit" />
+                                <tr>
+                                    <td>Year: </td>
+                                    <td><input type="text" name="year" value="" /></td>                        
+                                </tr>
 
-            </form>
+                                <tr>
+                                    <td>Car Model: </td>
+                                    <td><input type="text" name="model" value="" /></td>                        
+                                </tr>
+
+                                <tr>
+                                    <td>Car Color: </td>
+                                    <td><input type="text" name="color" value="" /></td>                        
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <input type="submit" name="submit" value="Submit" />
+
+                    </form>
+                </div>
+                <a href="read">Back to List</a>
+            </div>
+
+            <%@ include file="includes/footer.jsp" %>   
+
         </div>
-        <a href="read">Back to List</a>
-
     </body>
 </html>

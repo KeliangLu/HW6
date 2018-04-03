@@ -1,6 +1,6 @@
             <div class = "header">
 		<div class = "headerImg">
-			<img src="car.jpeg" height="150px" />
+			<img src="includes/car.jpeg" height="150px" />
 		</div>
     
 		<div class = "headerText">

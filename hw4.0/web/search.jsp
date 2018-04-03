@@ -8,16 +8,28 @@
         <title>Search</title>
     </head>
     <body>
-        <h1>Search car's Name</h1>
+        <div class="wrap">
 
-        <form name="searchForm" action="search" method="get">
+            <%@ include file="includes/header.jsp" %>
 
-            <input type="text" name="searchVal" value="" />
+            <%@ include file="includes/menu.jsp" %>
 
-            <br>
+            <div class="main">
+                <h1>Search car's Name</h1>
 
-            <input type="submit" name="submit" value="Search" />
+                <form name="searchForm" action="search" method="get">
 
-        </form>
+                    <input type="text" name="searchVal" value="" />
+
+                    <br>
+
+                    <input type="submit" name="submit" value="Search" />
+
+                </form>
+            </div>
+
+            <%@ include file="includes/footer.jsp" %>   
+
+        </div> 
     </body>
 </html>

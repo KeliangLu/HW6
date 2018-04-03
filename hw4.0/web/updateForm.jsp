@@ -11,42 +11,52 @@
         <title>Update a Car</title>
     </head>
     <body>
-        <h1>Update</h1>
+        <%@ include file="includes/header.jsp" %>
 
-        <form name="updateForm" action="updateCar" method="get">
-            <table class = "update">
-                <tbody>
-                    <tr>
-                        <td>Car ID: </td>
-                        <td><input type="text" name="id" value="<%=cars.getCARID()%>" readonly/></td>
-                    </tr>
+        <%@ include file="includes/menu.jsp" %>
 
-                    <tr>
-                        <td>Car Name: </td>
-                        <td><input type="text" name="name" value="<%=cars.getCARNAME()%>" /></td>                        
-                    </tr>
+        <div class="main">
+            <h1>Update</h1>
 
-                    <tr>
-                        <td>Year: </td>
-                        <td><input type="text" name="year" value="<%=cars.getCARYEAR()%>" /></td>                        
-                    </tr>
+            <form name="updateForm" action="updateCar" method="get">
+                <table class = "update">
+                    <tbody>
+                        <tr>
+                            <td>Car ID: </td>
+                            <td><input type="text" name="id" value="<%=cars.getCARID()%>" readonly/></td>
+                        </tr>
 
-                    <tr>
-                        <td>Car Model: </td>
-                        <td><input type="text" name="model" value="<%=cars.getCARMODEL()%>" /></td>                        
-                    </tr>
+                        <tr>
+                            <td>Car Name: </td>
+                            <td><input type="text" name="name" value="<%=cars.getCARNAME()%>" /></td>                        
+                        </tr>
 
-                    <tr>
-                        <td>Car Color: </td>
-                        <td><input type="text" name="color" value="<%=cars.getCARCOLOR()%>" /></td>                        
-                    </tr>
+                        <tr>
+                            <td>Year: </td>
+                            <td><input type="text" name="year" value="<%=cars.getCARYEAR()%>" /></td>                        
+                        </tr>
 
-                </tbody>
-            </table>
-            <input type="reset" name="reset" value="Clear" />
-            <input type="submit" name="submit" value="Update" />
+                        <tr>
+                            <td>Car Model: </td>
+                            <td><input type="text" name="model" value="<%=cars.getCARMODEL()%>" /></td>                        
+                        </tr>
 
-        </form>
-        <a href="read">Back to List</a>
-    </body>
+                        <tr>
+                            <td>Car Color: </td>
+                            <td><input type="text" name="color" value="<%=cars.getCARCOLOR()%>" /></td>                        
+                        </tr>
+
+                    </tbody>
+                </table>
+                <input type="reset" name="reset" value="Clear" />
+                <input type="submit" name="submit" value="Update" />
+
+            </form>
+            <a href="read">Back to List</a>
+        </div>
+
+        <%@ include file="includes/footer.jsp" %>   
+
+    </div> 
+</body>
 </html>
