@@ -7,6 +7,7 @@
         <title>Cars information</title>
     </head>
     <body>
+        <div class="wrap"></div>
         <h1>Cars Database</h1>
         
         <a href="read">View All Cars</a>

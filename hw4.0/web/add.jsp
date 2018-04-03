@@ -9,8 +9,9 @@
     
     <body>
         <div class="addinfo" style="text-aligh:center">
+       
         <h2>Add a New Car</h2>
-        
+
         <form name="addForm" action="addCar" method="get">
             <table>
                 <tbody>
@@ -46,5 +47,6 @@
         </form>
         </div>
         <a href="read">Back to List</a>
+
     </body>
 </html>

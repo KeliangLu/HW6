@@ -18,7 +18,7 @@
                 <tbody>
                     <tr>
                         <td>Car ID: </td>
-                        <td><input type="text" name="id" value="<%=cars.getCARID()%>" /></td>
+                        <td><input type="text" name="id" value="<%=cars.getCARID()%>" readonly/></td>
                     </tr>
                     
                     <tr>
